@@ -1,3 +1,5 @@
+from simple_screen import locate, Input, Print, cls
+
 tipos_entrada = {
     "BEBE": {"EDAD": 3, "PRECIO": 0, "CONTADOR": 0},
     "NIÑO": {"EDAD": 13, "PRECIO": 14, "CONTADOR": 0},
@@ -27,12 +29,14 @@ def pide_edad():
     en otro caso vuelve a pedir
 
     '''
+    cls()
     while True:
-        edad = input("Dime Edad: ")
+        locate(2,2)
+        edad = Input("Dime Edad: ")
         if edad == "":
             break
         elif not es_entero_menor_de_100_y_no_negativo(edad):
-            print("introduce un numero entre 0 y 99")
+            locate(2,4, "introduce un numero entre 0 y 99")
             continue
         else:
             edad = int(edad)
